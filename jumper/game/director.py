@@ -78,7 +78,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.word.print()
+        # self.word.print()
         self.parachuter.display()
 
         
