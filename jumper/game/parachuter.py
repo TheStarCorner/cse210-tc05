@@ -39,7 +39,7 @@ class Parachuter:
                     "  / \  \n"
                     "       \n" 
                     "\n"          
-                    "^^^^^^^")
+                    "^^^^^^^\n")
         elif self.wrong_Guess == 1:
             print( " /___\ \n"
                    " \   / \n"
@@ -49,7 +49,7 @@ class Parachuter:
                    "  / \  \n"
                    "       \n" 
                    "\n"          
-                   "^^^^^^^")
+                   "^^^^^^^\n")
         elif self.wrong_Guess == 2:
             print( " \   / \n"
                    "  \ /  \n"
@@ -58,7 +58,7 @@ class Parachuter:
                    "  / \  \n"
                    "       \n" 
                    "\n"          
-                   "^^^^^^^")
+                   "^^^^^^^\n")
         elif self.wrong_Guess == 3:
             print( "  \ /  \n"
                    "   0   \n"
@@ -66,27 +66,28 @@ class Parachuter:
                    "  / \  \n"
                    "       \n" 
                    "\n"          
-                   "^^^^^^^")
+                   "^^^^^^^\n")
         elif self.wrong_Guess == 4:
             print( "   0   \n"
                    "  /|\  \n"
                    "  / \  \n"
                    "       \n" 
                    "\n"          
-                   "^^^^^^^")
+                   "^^^^^^^\n")
+            print('\x1b[5;31;43m' + "He's in free-fall! One more wrong guess and he's a goner." + '\x1b[0m')
         elif self.wrong_Guess == 5:
             print( "   X   \n"
                    "  /?\  \n"
                    "  / /  \n"
                    "       \n" 
                    "\n"          
-                   "^^^^^^^")
+                   "^^^^^^^\n")
 
     def has_lost(self):
         #checks to see if wrongGuess is equal to 5.
         #if = to 5 then game ends.
         #if not then game continues.
         if self.wrong_Guess == 5:
-            return False
-        else:
             return True
+        else:
+            return False

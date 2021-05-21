@@ -20,9 +20,13 @@ class Word:
             if(i == None):
                 i = '_'
             print(i, end = "")
+        print('\n')
 
     def has_won(self):
         for i in self.guess:
             if i == None:
                 return False
         return True
+    
+    def print_actual(self):
+        print("\x1b[0;37;41m" + self.actual + "\x1b[0m")

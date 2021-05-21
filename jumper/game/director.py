@@ -35,15 +35,22 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-
+        self.word.print()
+        a = 0
         while self.keep_playing:
-            """Starts the game loop to control the sequence of play.
-        
-        Args:
-            self (Director): an instance of Director.
-            """
-            self.do_updates(self.get_inputs)
+            self.do_updates(self.get_inputs())
             self.do_outputs()
+            if(self.parachuter.has_lost()):
+                self.keep_playing = False
+                a = 1
+            if(self.word.has_won()):
+                self.keep_playing = False
+                a = 2
+        if a == 1:
+            print("\x1b[0;37;41m" + "Better luck next time, buddy! The word was: " + "\x1b[0m", end='')
+            self.word.print_actual()
+        if a == 2:
+            print('\x1b[6;30;42m' + "Nice job dude!" + '\x1b[0m')
 
 
 
@@ -78,7 +85,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        # self.word.print()
+        self.word.print()
         self.parachuter.display()
 
         
